@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1070614590418",
+    "firebase_url": "https://ibm-hackathon-2020.firebaseio.com",
+    "project_id": "ibm-hackathon-2020",
+    "storage_bucket": "ibm-hackathon-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070614590418:android:855de1feda4a9ad3acce0b",
+        "android_client_info": {
+          "package_name": "com.example.ibmhackathon2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070614590418-97g8ovp7i8t10kr8k47qt75jgt4nleqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ibmhackathon2020",
+            "certificate_hash": "d722c891b97ae35010b05424b833dc28e113ebcc"
+          }
+        },
+        {
+          "client_id": "1070614590418-n7t9p8s00m8dg4u6e3sgrfec3d651jgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAugSj3w6coKAuwtrgCeMLQg0FrFVFuNg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070614590418-n7t9p8s00m8dg4u6e3sgrfec3d651jgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

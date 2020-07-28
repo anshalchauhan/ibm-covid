@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="assistant_id">61daeae4-34cf-4730-899c-057cb0e9b4dd</string>
+    <string name="assistant_apikey">Zbt9YsL77KwoCpFGQM-AbOnCVV2kl7TihSItqWgSNHlSa</string>
+    <string name="assistant_url">https://gateway.watsonplatform.net/assistant/api</string>
+
+    <string name="STT_apikey">NiuQwXdNgwO451yWq2MxEKGG6KMqQ8_PgXkMXBX1aN7Z</string>
+    <string name="STT_url">https://stream.watsonplatform.net/speech-to-text/api</string>
+
+    <string name="TTS_apikey">Rd-SikH35PvN0LHygUXY6t-H1lyWjsXZ2Hgde0n9Lg5B</string>
+    <string name="TTS_url">https://stream.watsonplatform.net/text-to-speech/api</string>
+
+</resources>
