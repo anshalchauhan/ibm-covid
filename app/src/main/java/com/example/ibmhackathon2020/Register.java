@@ -2,7 +2,7 @@ package com.example.ibmhackathon2020;
 
 public class Register{
     private String userId,name,address,email,password;
-    private Integer pincode,phone_no;
+    private String pincode,phone_no;
 
     public Register() {
     }
@@ -13,6 +13,22 @@ public class Register{
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getPhone_no() {
+        return phone_no;
+    }
+
+    public void setPhone_no(String phone_no) {
+        this.phone_no = phone_no;
     }
 
     public String getName() {
@@ -47,19 +63,4 @@ public class Register{
         this.password = password;
     }
 
-    public Integer getPincode() {
-        return pincode;
-    }
-
-    public void setPincode(Integer pincode) {
-        this.pincode = pincode;
-    }
-
-    public Integer getPhone_no() {
-        return phone_no;
-    }
-
-    public void setPhone_no(Integer phone_no) {
-        this.phone_no = phone_no;
-    }
 }

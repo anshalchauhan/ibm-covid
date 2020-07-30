@@ -2,9 +2,25 @@ package com.example.ibmhackathon2020;
 
 public class AdmRegister {
     private String SellerId, OwnerName, ShopName,Location, Emailid, Password;
-    private Integer PinCode,PhoneNo;
+    private String PinCode,PhoneNo;
 
     public AdmRegister() {
+    }
+
+    public String getPinCode() {
+        return PinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        PinCode = pinCode;
+    }
+
+    public String getPhoneNo() {
+        return PhoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        PhoneNo = phoneNo;
     }
 
     public String getSellerId() {
@@ -55,19 +71,4 @@ public class AdmRegister {
         Password = password;
     }
 
-    public Integer getPinCode() {
-        return PinCode;
-    }
-
-    public void setPinCode(Integer pinCode) {
-        PinCode = pinCode;
-    }
-
-    public Integer getPhoneNo() {
-        return PhoneNo;
-    }
-
-    public void setPhoneNo(Integer phoneNo) {
-        PhoneNo = phoneNo;
-    }
 }

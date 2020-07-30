@@ -9,12 +9,30 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/covidStatus"
+            android:id="@+id/items"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Covid Status" />
+            android:title="Items"/>
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_packed_orders"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="Packed Orders" />
+        <item
+            android:id="@+id/nav_today_orders"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Today's Orders" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/covidStatus"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Covid Helpline"/>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Log Out"/>
     </group>
 </menu>

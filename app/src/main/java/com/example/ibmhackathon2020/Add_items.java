@@ -62,10 +62,13 @@ public class Add_items extends AppCompatActivity {
                 final String desc1 = desc.getText().toString().trim();
                 String p1=price.getText().toString().trim();
                 String q1=qty.getText().toString().trim();
+                int p = Integer.parseInt(p1);
+                int q = Integer.parseInt(q1);
 
                     add_item.setItemName(iname1);
-                    add_item.setCost(p1);
-                    add_item.setQty(q1);
+                    add_item.setCost(p);
+                    add_item.setQty(q);
+                    add_item.setItemId((int) (id+1));
                     add_item.setDesc(desc1);
                     add_item.setSellerId(sid);
                     reff.child(String.valueOf(id+1)).setValue(add_item);

@@ -142,9 +142,9 @@ public class RegisterActivity extends AppCompatActivity {
                             if(cusrad.isChecked()) {
                                 cusregister.setUserId(userID);
                                 cusregister.setName(name);
-                                cusregister.setPhone_no(0);
+                                cusregister.setPhone_no("0");
                                 cusregister.setAddress("null");
-                                cusregister.setPincode(0);
+                                cusregister.setPincode("0");
                                 cusregister.setEmail(email);
                                 cusregister.setPassword(password);
                                 reff.child(userID).setValue(cusregister);
@@ -155,8 +155,8 @@ public class RegisterActivity extends AppCompatActivity {
                                admregister.setOwnerName(name);
                                admregister.setShopName("null");
                                admregister.setLocation("null");
-                               admregister.setPinCode(0);
-                               admregister.setPhoneNo(0);
+                               admregister.setPinCode("0");
+                               admregister.setPhoneNo("0");
                                admregister.setEmailid(email);
                                admregister.setPassword(password);
                                 reff2.child(userID).setValue(admregister);
