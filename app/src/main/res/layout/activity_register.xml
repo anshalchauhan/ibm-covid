@@ -100,24 +100,24 @@
             android:layout_height="90dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.822"
+            app:layout_constraintHorizontal_bias="0.853"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.741">
 
-            <RadioButton
-                android:id="@+id/radio_customer"
-                android:layout_width="105dp"
-                android:layout_height="47dp"
-                android:onClick="checkButton"
-                android:text="Customer" />
+                <RadioButton
+                    android:id="@+id/radio_customer"
+                    android:layout_width="105dp"
+                    android:layout_height="47dp"
+                    android:onClick="checkButton"
+                    android:text="Customer" />
 
-            <RadioButton
-                android:id="@+id/radio_seller"
-                android:layout_width="105dp"
-                android:layout_height="42dp"
-                android:onClick="checkButton"
-                android:text="Seller" />
+                <RadioButton
+                    android:id="@+id/radio_seller"
+                    android:layout_width="105dp"
+                    android:layout_height="42dp"
+                    android:onClick="checkButton"
+                    android:text="Seller" />
 
         </RadioGroup>
 

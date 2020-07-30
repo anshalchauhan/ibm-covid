@@ -128,6 +128,5 @@ public class login_activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//kjkjjkjkjkjkjkcxzcxzxcz
     }
 }
