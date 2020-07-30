@@ -129,6 +129,6 @@ public class login_activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //asd38092490kaklklasf;ll;as;ddsad
+        //qwertyuiop
     }
 }
