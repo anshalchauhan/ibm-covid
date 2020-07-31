@@ -1,10 +1,18 @@
 package com.example.ibmhackathon2020;
 
 public class Items {
-    private String itemName, Desc, sellerId;
-    private String qty, cost;
+    private String itemName, Desc, sellerId,unit;
+    private Integer qty, cost,itemId;
 
     public Items() {
+    }
+
+    public Integer getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Integer itemId) {
+        this.itemId = itemId;
     }
 
     public String getItemName() {
@@ -31,19 +39,27 @@ public class Items {
         this.sellerId = sellerId;
     }
 
-    public String getQty() {
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public Integer getQty() {
         return qty;
     }
 
-    public void setQty(String qty) {
+    public void setQty(Integer qty) {
         this.qty = qty;
     }
 
-    public String  getCost() {
+    public Integer getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(Integer cost) {
         this.cost = cost;
     }
 }

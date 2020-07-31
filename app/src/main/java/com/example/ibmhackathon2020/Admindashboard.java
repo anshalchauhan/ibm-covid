@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.NavInflater;
@@ -32,7 +34,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class Admindashboard extends AppCompatActivity {
+public class Admindashboard extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     TextView shopName, phoneNo;
@@ -58,14 +60,35 @@ public class Admindashboard extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Admindashboard.this,Add_items.class);
-                i.putExtra("sid",sid);
+                Intent i = new Intent(Admindashboard.this, Add_items.class);
+                i.putExtra("sid", sid);
                 startActivity(i);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+        /*navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch (menuItem.getItemId()){
+                    case R.id.nav_home:
+                        break;
+                    case R.id.items:
+                        Intent i = new Intent(Admindashboard.this,WatsonAsst.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_slideshow:
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });*/
 
         reff2.orderByChild("sellerId").equalTo(sid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -87,31 +110,6 @@ public class Admindashboard extends AppCompatActivity {
             }
         });
 
-
-        /*navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id=menuItem.getItemId();
-                switch (id){
-                    case R.id.nav_home:
-                        //Intent i = new Intent(Admindashboard.this,MainActivity.class);
-                        //startActivity(i);
-                        break;
-                    case R.id.covidStatus:
-                        Toast.makeText(Admindashboard.this,id+"hi",Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(Admindashboard.this,MainActivity.class);
-                        startActivity(i);
-                        break;
-                    case R.id.nav_slideshow:
-                        //Intent i3 = new Intent(Admindashboard.this,MainActivity.class);
-                        //startActivity(i3);
-                        break;
-                }
-                return false;
-            }
-        });*/
-
-
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setDrawerLayout(drawer)
@@ -119,6 +117,30 @@ public class Admindashboard extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.nav_home:
+                        Toast.makeText(getApplicationContext(),"home button",Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.items:
+                        Intent i3 = new Intent(getApplicationContext(),DisplayItems.class);
+                        i3.putExtra("sid",sid);
+                        startActivity(i3);
+                        break;
+                    case R.id.covidStatus:
+                        Intent i = new Intent(getApplicationContext(),WatsonAsst.class);
+                        startActivity(i);
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     @Override

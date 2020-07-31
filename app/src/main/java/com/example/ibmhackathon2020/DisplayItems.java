@@ -36,10 +36,11 @@ public class DisplayItems extends AppCompatActivity {
     TextView txtmsg;
     String sid;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_items);
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class DisplayItems extends AppCompatActivity {
 
         sid = getIntent().getStringExtra("sid");
         database=FirebaseDatabase.getInstance();

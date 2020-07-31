@@ -15,4 +15,8 @@
     <string name="title_activity_cusdashboard">Cusdashboard</string>
 
     <string name="menu_refresh">Refresh</string>
+    <string name="title_activity_custsahboard">Custsahboard</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_member">MemberActivity</string>
+    <string name="memberdashboard">Memberdashboard</string>
 </resources>

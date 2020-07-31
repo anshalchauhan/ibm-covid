@@ -25,7 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class login_activity extends AppCompatActivity {
     EditText mEmail,mPassword;
-    EditText jifp;
     Button mLoginBtn;
     TextView mCreateBtn,forgotTextLink;
     ProgressBar progressBar;
@@ -84,8 +83,8 @@ public class login_activity extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.exists()) {
                                         Toast.makeText(login_activity.this,  "Logged in Successfully as Customer", Toast.LENGTH_SHORT).show();
-                                        Intent j= new Intent(getApplicationContext(), MainActivity.class);
-                                        j.putExtra("uid",userID);
+                                        Intent j= new Intent(getApplicationContext(), MainActivity2.class);
+                                        //j.putExtra("uid",userID);
                                         startActivity(j);
                                     }
                                 }
@@ -129,6 +128,6 @@ public class login_activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //frtywbsacidsno fbh
+
     }
 }
