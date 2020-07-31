@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_margin="5dp" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/parlayout">
+
+    <TextView android:layout_margin="5dp" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/shopName" android:textStyle="bold" android:padding="10dp" android:textSize="28sp" android:text="Shop Name"/>
+
+        <TextView
+            android:id="@+id/ownerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopName"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:text="Owner Name"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ownerName"
+            android:layout_marginTop="72dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:text="Location"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/phonenum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location"
+            android:layout_marginTop="57dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:text="Phone No."
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="449dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:text="Pin Code"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
