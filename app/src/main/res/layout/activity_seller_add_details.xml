@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer_add_details">
+    tools:context=".seller_add_details">
 
 
     <ImageView
@@ -13,16 +13,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/login" />
 
     <EditText
-        android:id="@+id/address_1"
+        android:id="@+id/shop_name"
         android:layout_width="331dp"
         android:layout_height="48dp"
         android:background="@drawable/input_field"
-        android:hint="Address"
+        android:hint="Shop Name"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,32 +33,40 @@
         app:layout_constraintVertical_bias="0.314" />
 
     <EditText
-        android:id="@+id/pin_code"
+        android:id="@+id/location1"
         android:layout_width="331dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="388dp"
+        android:layout_marginBottom="380dp"
+        android:background="@drawable/input_field"
+        android:hint="Location"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/pin_code1"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="296dp"
         android:background="@drawable/input_field"
         android:hint="Pincode"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_name"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/phonenum1"
         android:layout_width="331dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="304dp"
+        android:layout_marginBottom="212dp"
         android:background="@drawable/input_field"
         android:hint="Phone No."
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/qty"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/add_item_btn"
@@ -69,11 +79,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
-
-
-
+        app:layout_constraintVertical_bias="0.813" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
