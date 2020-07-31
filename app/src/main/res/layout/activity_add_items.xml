@@ -6,53 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".Add_items">
 
+
     <EditText
         android:id="@+id/item_name"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="176dp"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field"
         android:hint="Item Name"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="34dp" />
+        app:layout_constraintVertical_bias="0.197" />
 
     <EditText
         android:id="@+id/qty"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field"
         android:hint="Quantity"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_name"
-        app:layout_constraintVertical_bias="0.035"
-        tools:layout_editor_absoluteX="0dp" />
-
+        app:layout_constraintVertical_bias="0.111" />
 
     <EditText
         android:id="@+id/cost"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field"
         android:hint="Cost (in Rupees)"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/qty"
-        app:layout_constraintVertical_bias="0.035"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <EditText
         android:id="@+id/desc"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field"
         android:hint="Description"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cost"
-        app:layout_constraintVertical_bias="0.035"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.157" />
 
     <Button
         android:id="@+id/add_item_btn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button"
         android:text="Add Item"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc"
-        app:layout_constraintVertical_bias="0.09"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
