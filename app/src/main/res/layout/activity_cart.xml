@@ -41,14 +41,14 @@
                 android:textSize="28sp"
                 android:text="Quantity">
             </TextView>
+
             <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:padding="5dp"
-                android:textStyle="bold"
+                android:text="Cost"
                 android:textSize="28sp"
-                android:text="Cost">
-            </TextView>
+                android:textStyle="bold"></TextView>
         </TableRow>
 
         <RelativeLayout
