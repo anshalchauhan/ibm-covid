@@ -23,13 +23,16 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import static com.google.common.base.Predicates.equalTo;
+
 public class CartActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     FirebaseRecyclerAdapter<ItemCategory, ItemCategoryViewHolder> adapter;
     FirebaseDatabase database;
-    DatabaseReference reference;
+    FirebaseRecyclerOptions options;
+    DatabaseReference reference,reference1;
     TextView txtmsg;
     EditText enterqty;
     String sid, uid, c;
@@ -43,6 +46,7 @@ public class CartActivity extends AppCompatActivity {
 
         uid = getIntent().getStringExtra("uid");
         sid = getIntent().getStringExtra("sid");
+        item_lists=getIntent().getIntegerArrayListExtra("itemlists");
         database = FirebaseDatabase.getInstance();
         reference = database.getReference().child("Items");
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view2);
@@ -50,14 +54,18 @@ public class CartActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+        Toast.makeText(CartActivity.this,"hi"+item_lists,Toast.LENGTH_LONG).show();
         showList();
     }
 
     private void showList() {
 
-        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<ItemCategory>()
-                .setQuery(reference, ItemCategory.class)
+        int x=item_lists.size();
+        options = new FirebaseRecyclerOptions.Builder<ItemCategory>()
+
+                .setQuery(reference.orderByChild("itemId").equalTo(item_lists.get(0)), ItemCategory.class)
                 .build();
+        //}
 
         adapter = new FirebaseRecyclerAdapter<ItemCategory, ItemCategoryViewHolder>(options) {
 

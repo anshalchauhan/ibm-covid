@@ -36,11 +36,10 @@ public class DisplayItems extends AppCompatActivity {
     TextView txtmsg;
     String sid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-public class DisplayItems extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_display_items);
 
         sid = getIntent().getStringExtra("sid");
         database=FirebaseDatabase.getInstance();
@@ -49,7 +48,7 @@ public class DisplayItems extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-       // txtmsg=(TextView)findViewById(R.id.txtmsg);
+        // txtmsg=(TextView)findViewById(R.id.txtmsg);
 
         /*reference.orderByChild("sellerId").equalTo(sid).addValueEventListener(new ValueEventListener() {
            // @SuppressLint("SetTextI18n")
@@ -65,12 +64,12 @@ public class DisplayItems extends AppCompatActivity {
             }
         });*/
 
-       // reference.orderByChild("sellerId").equalTo(sid)
+        // reference.orderByChild("sellerId").equalTo(sid)
         showList();
     }
     private void showList(){
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<ItemCategory>()
-        .setQuery(reference.orderByChild("sellerId").equalTo(sid),ItemCategory.class)
+                .setQuery(reference.orderByChild("sellerId").equalTo(sid),ItemCategory.class)
                 .build();
 
         adapter= new FirebaseRecyclerAdapter<ItemCategory,ItemCategoryViewHolder>(options) {
