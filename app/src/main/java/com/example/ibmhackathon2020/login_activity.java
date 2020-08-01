@@ -94,7 +94,7 @@ public class login_activity extends AppCompatActivity {
                                     Toast.makeText(login_activity.this, "Error", Toast.LENGTH_SHORT).show();
                                 }
                             });
-                            reff2.orderByChild("SellerId").equalTo(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            reff2.orderByChild("sellerId").equalTo(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.exists()) {
