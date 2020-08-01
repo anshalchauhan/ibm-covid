@@ -24,8 +24,11 @@ import com.example.ibmhackathon2020.ViewHolder.ShopCategoryViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.protobuf.StringValue;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -38,7 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager1;
     FirebaseRecyclerAdapter<ShopCategory, ShopCategoryViewHolder> adapter1;
     FirebaseDatabase database1;
-    DatabaseReference reference1;
+    DatabaseReference reference1,reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
         uid = getIntent().getStringExtra("uid");
         database1=FirebaseDatabase.getInstance();
         reference1=database1.getReference("Seller");
+        reff = FirebaseDatabase.getInstance().getReference().child("Member");
         recyclerView1 = (RecyclerView)findViewById(R.id.recycler_view1);
         recyclerView1.setHasFixedSize(true);
         layoutManager1=new GridLayoutManager(this,2);
@@ -67,14 +71,18 @@ public class MainActivity2 extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         int id = item.getItemId();
                         switch (id) {
-                            case R.id.account:
-                                Toast.makeText(MainActivity2.this, "My Account", Toast.LENGTH_SHORT).show();
+                            case R.id.home1:
+                                Intent j= new Intent(getApplicationContext(), MainActivity2.class);
+                                j.putExtra("uid",uid);
+                                startActivity(j);
                                 break;
-                            case R.id.settings:
-                                Toast.makeText(MainActivity2.this, "Settings", Toast.LENGTH_SHORT).show();
+                            case R.id.covid1:
+                                Intent k= new Intent(getApplicationContext(), WatsonAsst.class);
+                                startActivity(k);
                                 break;
-                            case R.id.mycart:
-                                Toast.makeText(MainActivity2.this, "My Cart", Toast.LENGTH_SHORT).show();
+                            case R.id.logout1:
+                                Intent l= new Intent(getApplicationContext(), login_activity.class);
+                                startActivity(l);
                                 break;
                             default:
                                 return true;
@@ -82,7 +90,23 @@ public class MainActivity2 extends AppCompatActivity {
                         return true;
                     }
                 });
-                showlist1(uid);
+
+        /*reff.orderByChild("userId").equalTo(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child("address").getValue().equals("null") || snapshot.child("phone_no").getValue().equals("0") || snapshot.child("pincode").getValue().equals("0")) {
+                    Intent j= new Intent(getApplicationContext(), MainActivity2.class);
+                    j.putExtra("uid",uid);
+                    startActivity(j);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });*/
+
+        showlist1(uid);
             }
 
     private void showlist1(final String uid) {

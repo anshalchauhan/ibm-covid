@@ -149,12 +149,18 @@ public class RegisterActivity extends AppCompatActivity {
                                 cusregister.setPassword(password);
                                 reff.child(userID).setValue(cusregister);
                                 Toast.makeText(RegisterActivity.this, "Registered as Customer.", Toast.LENGTH_SHORT).show();
+                                Intent j= new Intent(getApplicationContext(), CustomerAddDetails.class);
+                                j.putExtra("uid",userID);
+                                j.putExtra("name",name);
+                                j.putExtra("email",email);
+                                j.putExtra("password",password);
+                                startActivity(j);
                             }
                             else if(admrad.isChecked()){
                                admregister.setSellerId(userID);
                                admregister.setOwnerName(name);
-                               admregister.setShopName("null");
-                               admregister.setLocation("null");
+                              admregister.setShopName("null");
+                              admregister.setLocation("null");
                                admregister.setPinCode("0");
                                admregister.setPhoneNo("0");
                                admregister.setEmailid(email);
@@ -162,6 +168,12 @@ public class RegisterActivity extends AppCompatActivity {
                                 reff2.child(userID).setValue(admregister);
 
                                 Toast.makeText(RegisterActivity.this, "Registered as Seller.", Toast.LENGTH_SHORT).show();
+                                Intent j= new Intent(getApplicationContext(), SellerAddDetails.class);
+                                j.putExtra("sid",userID);
+                                j.putExtra("name",name);
+                                j.putExtra("email",email);
+                                j.putExtra("password",password);
+                                startActivity(j);
                             }
 
                            /* DocumentReference documentReference = fStore.collection("users").document(userID);

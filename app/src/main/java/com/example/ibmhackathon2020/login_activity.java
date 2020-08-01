@@ -84,7 +84,7 @@ public class login_activity extends AppCompatActivity {
                                     if (snapshot.exists()) {
                                         Toast.makeText(login_activity.this,  "Logged in Successfully as Customer", Toast.LENGTH_SHORT).show();
                                         Intent j= new Intent(getApplicationContext(), MainActivity2.class);
-                                        //j.putExtra("uid",userID);
+                                        j.putExtra("uid",userID);
                                         startActivity(j);
                                     }
                                 }
@@ -94,7 +94,7 @@ public class login_activity extends AppCompatActivity {
                                     Toast.makeText(login_activity.this, "Error", Toast.LENGTH_SHORT).show();
                                 }
                             });
-                            reff2.orderByChild("sellerId").equalTo(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            reff2.orderByChild("SellerId").equalTo(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.exists()) {

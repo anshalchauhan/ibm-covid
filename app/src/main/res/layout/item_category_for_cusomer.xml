@@ -4,6 +4,7 @@ android:layout_width="wrap_content" android:layout_height="wrap_content"
 android:layout_margin="5dp">
 
 <RelativeLayout
+    android:id="@+id/palayout"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
@@ -59,16 +60,6 @@ android:layout_margin="5dp">
         android:hint="Cost"
         android:padding="10dp"
         android:textSize="24sp" />-->
-
-    <CheckBox
-        android:id="@+id/select_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentEnd="true"
-        android:scaleX="2.5"
-        android:scaleY="2.5"
-        android:padding="20dp" />
 
 </RelativeLayout>
 </androidx.cardview.widget.CardView>

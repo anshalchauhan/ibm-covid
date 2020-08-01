@@ -11,6 +11,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ibmhackathon2020.Model.Cart;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -38,7 +40,7 @@ public class Admindashboard extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     TextView shopName, phoneNo;
-    DatabaseReference reff2;
+    DatabaseReference reff2,reff3;
     Button btn;
 
     @Override
@@ -53,10 +55,11 @@ public class Admindashboard extends AppCompatActivity{
         shopName = (TextView) hview.findViewById(R.id.txtshopname);
         phoneNo = (TextView) hview.findViewById(R.id.txtphoneno);
         reff2 = FirebaseDatabase.getInstance().getReference().child("Seller");
+        reff3 = FirebaseDatabase.getInstance().getReference().child("Cart");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,39 +67,20 @@ public class Admindashboard extends AppCompatActivity{
                 i.putExtra("sid", sid);
                 startActivity(i);
             }
-        });
+        });*/
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
-        /*navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                switch (menuItem.getItemId()){
-                    case R.id.nav_home:
-                        break;
-                    case R.id.items:
-                        Intent i = new Intent(Admindashboard.this,WatsonAsst.class);
-                        startActivity(i);
-                        break;
-                    case R.id.nav_slideshow:
-                        break;
-                    default:
-                        break;
-                }
-                return true;
-            }
-        });*/
-
-        reff2.orderByChild("sellerId").equalTo(sid).addListenerForSingleValueEvent(new ValueEventListener() {
+         reff2.orderByChild("SellerId").equalTo(sid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()) {
-                    String shopname = snapshot.child(sid).child("shopName").getValue().toString();
-                    String pno = snapshot.child(sid).child("phoneNo").getValue().toString();
+                    String shopname = snapshot.child(sid).child("ShopName").getValue().toString();
+                    String pno = snapshot.child(sid).child("PhoneNo").getValue().toString();
                     if (!shopname.equals("null") && !pno.equals("0")) {
                         shopName.setText(shopname);
                         phoneNo.setText(pno);
@@ -110,7 +94,7 @@ public class Admindashboard extends AppCompatActivity{
             }
         });
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
+            mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setDrawerLayout(drawer)
                 .build();
@@ -130,6 +114,15 @@ public class Admindashboard extends AppCompatActivity{
                         Intent i3 = new Intent(getApplicationContext(),DisplayItems.class);
                         i3.putExtra("sid",sid);
                         startActivity(i3);
+                        break;
+                        case R.id.orders:
+                        Intent i2 = new Intent(getApplicationContext(),Orders.class);
+                        i2.putExtra("sid",sid);
+                        startActivity(i2);
+                        break;
+                        case R.id.logout5:
+                        Intent i5 = new Intent(getApplicationContext(),login_activity.class);
+                        startActivity(i5);
                         break;
                     case R.id.covidStatus:
                         Intent i = new Intent(getApplicationContext(),WatsonAsst.class);

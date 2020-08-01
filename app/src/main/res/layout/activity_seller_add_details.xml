@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".seller_add_details">
+    tools:context=".SellerAddDetails">
 
 
     <ImageView
@@ -30,13 +30,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.295" />
 
     <EditText
         android:id="@+id/location1"
         android:layout_width="331dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginBottom="364dp"
         android:background="@drawable/input_field"
         android:hint="Location"
         android:textColorHint="@color/black"
@@ -48,7 +48,7 @@
         android:id="@+id/pin_code1"
         android:layout_width="331dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="284dp"
         android:background="@drawable/input_field"
         android:hint="Pincode"
         android:textColorHint="@color/black"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/phonenum1"
+        android:id="@+id/phonenum2"
         android:layout_width="331dp"
         android:layout_height="48dp"
         android:layout_marginBottom="212dp"
@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/add_item_btn"
+        android:id="@+id/add_item_btn2"
         android:layout_width="135dp"
         android:layout_height="40dp"
         android:background="@drawable/button"

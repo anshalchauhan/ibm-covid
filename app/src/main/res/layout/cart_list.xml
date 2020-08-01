@@ -1,49 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/parlayout2"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
             <TextView
-                android:id="@+id/txtslno"
+                android:id="@+id/iname6"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="70dp"
-                android:padding="5dp"
-                android:textSize="24sp"
+                android:text="Item Name"
+                android:textSize="28sp"
+                android:padding="10dp"
+                android:layout_margin="5dp"
                 android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/quantity6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/iname6"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/cost6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cost"
+                android:padding="10dp"
+                android:layout_below="@+id/quantity6"
+                android:layout_margin="5dp"
+                android:textSize="24sp"/>
 
-    <TextView
-        android:id="@+id/txtiname"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@id/txtslno"
-        android:layout_marginEnd="-157dp"
-        android:padding="5dp"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtqty1"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtiname"
-        android:layout_marginEnd="-114dp"
-        android:padding="5dp"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtcost1"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@id/txtqty1"
-        android:layout_marginEnd="-294dp"
-        android:padding="5dp"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-</RelativeLayout>
+        </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

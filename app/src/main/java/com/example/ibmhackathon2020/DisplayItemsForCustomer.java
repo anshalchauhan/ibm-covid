@@ -38,7 +38,7 @@ public class DisplayItemsForCustomer extends AppCompatActivity {
     EditText enterqty;
     String sid,uid,c;
     int d;
-    ArrayList<Integer> item_lists=new ArrayList<>();
+    //ArrayList<Integer> item_lists=new ArrayList<>();
     //ArrayList<Integer> item_lists_qty =new ArrayList<>();
 
     @Override
@@ -56,18 +56,17 @@ public class DisplayItemsForCustomer extends AppCompatActivity {
             recyclerView.setLayoutManager(layoutManager);
             //enterqty=(EditText) findViewById(R.id.enterqty);
 
-        FloatingActionButton fab = findViewById(R.id.Order);
+       /* FloatingActionButton fab = findViewById(R.id.Order);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DisplayItemsForCustomer.this,CartActivity.class);
-                //i.putExtra("itemlists",item_lists);
+                Intent i = new Intent(DisplayItemsForCustomer.this,OrderItem.class);
                 i.putExtra("sid",sid);
                 i.putExtra("uid",uid);
                 startActivity(i);
                 //Toast.makeText(DisplayItemsForCustomer.this,"hi"+item_lists,Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
 
         /*reference.orderByChild("sellerId").equalTo(sid).addValueEventListener(new ValueEventListener() {
            // @SuppressLint("SetTextI18n")
@@ -103,35 +102,32 @@ public class DisplayItemsForCustomer extends AppCompatActivity {
                 @Override
                 protected void onBindViewHolder(@NonNull final ItemCategoryViewHolder holder, int i, @NonNull final ItemCategory itemCategory) {
                     int a=itemCategory.getQty();
-                    int b = itemCategory.getCost();
-                   /* if(!holder.enterqty1.getText().toString().isEmpty()) {
-                        c= holder.enterqty1.getText().toString().trim();
-                        d= Integer.parseInt(c);
-                    }*/
+                    int p=itemCategory.getCost();
+                    final int b = itemCategory.getItemId();
+                    final String c=String.valueOf(b);
+
                     holder.txtitemname1.setText(itemCategory.getItemName());
-                    holder.txtcost1.setText(String.valueOf(a));
-                    holder.txtqty1.setText(String.valueOf(b));
-                    //Toast.makeText(DisplayItemsForCustomer.this,"hi"+c,Toast.LENGTH_LONG).show();
+                    holder.txtcost1.setText(String.valueOf(p));
+                    holder.txtqty1.setText(String.valueOf(a));
 
+                   // Toast.makeText(DisplayItemsForCustomer.this,"A"+b,Toast.LENGTH_LONG).show();
 
-                    holder.selectitem.setOnClickListener(new View.OnClickListener() {
+                    holder.pl1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
-                            if(holder.selectitem.isChecked() ) {
-                                item_lists.add(itemCategory.getItemId());
-                               // item_lists_qty.add(d);
-                                //Toast.makeText(DisplayItemsForCustomer.this,"hi"+item_lists,Toast.LENGTH_LONG).show();
-                            }
-                            else if(!holder.selectitem.isChecked()) {
-                                item_lists.remove(itemCategory.getItemId());
-                               // item_lists_qty.remove(d);
-                                //Toast.makeText(DisplayItemsForCustomer.this,"hi"+item_lists,Toast.LENGTH_LONG).show();
-                            }
+                            Intent i = new Intent(DisplayItemsForCustomer.this,CartActivity.class);
+                            i.putExtra("uid",uid);
+                            i.putExtra("itemId",c);
+                            i.putExtra("iname",itemCategory.getItemName());
+                            i.putExtra("cost",(String.valueOf(itemCategory.getCost())));
+                            i.putExtra("desc",itemCategory.getDesc());
+                            i.putExtra("sid",sid);
+                            startActivity(i);
                         }
                     });
 
-                    //if(holder.selectitem.isChecked()){
+
+                //if(holder.selectitem.isChecked()){
                        // item_lists.add(itemCategory.getItemId());
 
                     //}

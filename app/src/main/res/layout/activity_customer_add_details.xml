@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer_add_details">
+    tools:context=".CustomerAddDetails">
 
 
     <ImageView
@@ -34,7 +34,7 @@
         android:id="@+id/pin_code"
         android:layout_width="331dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="388dp"
+        android:layout_marginBottom="352dp"
         android:background="@drawable/input_field"
         android:hint="Pincode"
         android:textColorHint="@color/black"
@@ -48,7 +48,7 @@
         android:id="@+id/phonenum1"
         android:layout_width="331dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="304dp"
+        android:layout_marginBottom="280dp"
         android:background="@drawable/input_field"
         android:hint="Phone No."
         android:textColorHint="@color/black"
@@ -71,9 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
-
-
+        app:layout_constraintVertical_bias="0.713" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
