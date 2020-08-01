@@ -55,17 +55,17 @@
     <Button
         android:id="@+id/register"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="91dp"
-        android:layout_height="42dp"
+        android:layout_width="111dp"
+        android:layout_height="47dp"
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="@color/pink"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.94" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
