@@ -33,7 +33,7 @@ public class login_activity extends AppCompatActivity {
     Button registerButton;
     DatabaseReference reff,reff2;
     DataSnapshot datasnapshot;
-
+//jhkjjk
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
